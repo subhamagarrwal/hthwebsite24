@@ -1,0 +1,249 @@
+body
+{
+    color: white;
+    background: linear-gradient(227deg, #3118FC -17.94%, #07003B 18.24%, #030015 70.49%);
+}
+
+/* common classes */
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.round-corner {
+    border-radius: 16px;
+}
+
+h2{
+    text-align: center;
+}
+
+.outer-container {
+    height: 100vh;
+    width: 95vw;
+    margin: auto;
+    background-color: antiquewhite;
+}
+
+.container-one,
+.container-two {
+    width: 100%;
+}
+
+.container-one {
+    height: 76%;
+    padding: 20px 20px 10px 20px;
+}
+
+.container-two {
+    height: 24%;
+    padding: 10px 20px 20px 20px;
+}
+
+.top-left,
+.top-right,
+.bottom-left,
+.bottom-right {
+    height: 100%;
+}
+
+.top-left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.top-right {
+    background: 
+    url('assets/graphicbg.png') center/cover no-repeat;
+    border-radius: 40px;
+    box-shadow: 6px 7px 4.5px 0px rgba(0, 0, 0, 0.25);
+    width: 30%;
+}
+
+.bottom-right {
+    border-radius: 40px;
+    background: linear-gradient(205deg, #032A5D 1.09%, #023C7D 52.25%, #027BD8 92.35%);
+    box-shadow: 6px 7px 4.5px 0px rgba(0, 0, 0, 0.25);
+    width: 30%;
+}
+.bottom-left {
+    border-radius: 40px;
+background: linear-gradient(229deg, #042C60 2.41%, #023E82 43.8%, #0279D6 92.94%);
+    width: 70%;
+}
+
+.top-left-one,
+.top-left-two {
+    width: 100%;
+}
+
+.top-left-one {
+    height: 35%;
+}
+
+.top-left-two {
+    height: 65%;
+}
+
+.top-left-one .left,
+.top-left-two .left {
+    height: 100%;
+}
+
+.top-left-one .left {
+    border-radius: 40px;
+background: linear-gradient(233deg, #03071E -29.27%, #004A99 43.78%, #0192F5 116.83%);
+box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 25%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width:90%;
+    }
+}
+
+.top-left-one .right,
+.top-left-two .right {
+    height: 100%;
+}
+
+.top-left-one .right {
+    border-radius: 41px;
+    background: linear-gradient(251deg, #022859 0.97%, #014187 48.19%, #017BD8 95.42%);
+    box-shadow: 6px 7px 4.5px 0px rgba(0, 0, 0, 0.25);
+    width: 75%;
+
+}
+
+.top-left-two .left {
+    border-radius: 40px;
+background: linear-gradient(238deg, #022B5E -0.1%, #024187 43.3%, #0179D5 86.69%);
+box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 55%;
+}
+.top-left-two .right {
+    width: 45%;
+    background: 
+        url('assets/hthlogo.svg') center/60% no-repeat, /* Image layer */
+        black; /* Black background layer */
+    border-radius: 40px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative; /* Ensure the element is positioned correctly */
+    z-index: 1; /* Ensure the element is on top */
+}
+
+@media (max-width: 840px) {
+    .outer-container{
+        width:95vw;
+        height:auto;
+    }
+}
+
+@media (max-width:720px){
+
+    .outer-container{
+        width:100%;
+        height:auto;
+    }
+
+    .container-one{
+        width:100%;
+        height:auto;
+        display:flex;
+        flex-direction: column;
+
+        .top-left{
+            width:100%;
+            display: flex;
+            flex-direction: column;
+
+            .top-left-one{
+                height:18vh;
+
+                .left{
+                    width:35%;
+                }
+                .right{
+                    width:65%;
+                }
+            }
+
+            .top-left-two{
+                width:100%;
+                display: flex;
+                flex-direction: column;
+
+                .left{
+                    width:100%;
+                    height: 50vh;
+                    order:2;
+                }
+
+                .right{
+                    width:100%;
+                    height:50vh;
+                }
+            }
+        }
+
+        .top-right{
+            height: 70vh;
+            width:100%;
+        }
+    }
+
+
+    .container-two{
+        display:flex;
+        flex-direction: column;
+
+        .bottom-left,
+        .bottom-right{
+            height:25vh;
+            width:100%;
+        }
+    }
+
+
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin:2% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height:90vh; /* Could be more or less, depending on screen size */
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
